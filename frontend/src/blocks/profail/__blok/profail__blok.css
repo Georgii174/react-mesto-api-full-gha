@@ -1,0 +1,20 @@
+.profail__blok {
+  max-width: 282px;
+  display: grid;
+  grid-template-columns: 1fr 24px;
+  grid-column-gap: 18px;
+  grid-row-gap: 16px;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .profail__blok {
+    grid-template-columns: 1fr 18px;
+    grid-column-gap: 10px;
+    grid-row-gap: 0;
+    max-width: 336px;
+    /* padding-right: 135px; */
+    margin-left: 22px;
+
+  }
+}

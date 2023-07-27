@@ -1,0 +1,31 @@
+.profail__add-button {
+  width: 282px;
+  height: 50px;
+  border: 2px solid #FFFFFF;
+  border-radius: 2px;
+  padding: 0;
+  margin: 32px auto 0;
+  background-color: #000000;
+  background: url(../../../images/plus.svg) center no-repeat;
+  cursor: pointer;
+}
+
+.profail__add-button:hover {
+  opacity: 0.8;
+}
+
+/* Не совесем уверен нужен ли этот пунтк на 768, но без него на мой взгляд получучается не очень красиво */
+@media screen and (min-width: 768px) {
+  .profail__add-button {
+    width: 133px;
+    margin: 74px 10px 0 39px;
+    background-size: 22px 22px;
+  }
+}
+
+@media screen and (min-width: 880px) {
+  .profail__add-button {
+    width: 151px;
+    margin: 74px 0 0 114px;
+  }
+}

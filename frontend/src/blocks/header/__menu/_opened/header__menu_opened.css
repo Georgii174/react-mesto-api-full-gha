@@ -1,0 +1,8 @@
+.header__menu_opened {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  background-size: cover;
+  border: none;
+  background-image: url(../../../../images/Close_Icon.svg);
+}

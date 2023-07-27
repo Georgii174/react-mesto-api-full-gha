@@ -1,0 +1,31 @@
+.popup__input_type_login {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 0 auto 30px;
+  min-height: 27px;
+  border: none;
+  border-bottom: 2px solid #cccccc;
+  box-sizing: border-box;
+  padding: 0;
+  color: #ffffff;
+  background-color: transparent;
+  width: 260px;
+}
+
+.popup__input_type_login:last-of-type {
+  margin-bottom: 0;
+}
+
+.popup__input_type_login::placeholder {
+  color: #ccc;
+}
+
+@media screen and (min-width: 768px) {
+  .popup__input_type_login {
+    width: 358px;
+    text-align: start;
+    font-size: 14px;
+  }
+}

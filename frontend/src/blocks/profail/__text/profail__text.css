@@ -1,0 +1,22 @@
+.profail__text {
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: -8px 0 0 41px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+@media screen and (min-width: 480px) {
+  .profail__text {
+    font-size: 18px;
+    line-height: 22px;
+    margin: -29px 0 0 9px;
+    text-align: start;
+  }
+}

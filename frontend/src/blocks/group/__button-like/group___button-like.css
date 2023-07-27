@@ -1,0 +1,17 @@
+.group__button-like {
+  background: url(../../../images/like.svg) center no-repeat;
+  border: none;
+  padding: 0;
+  /* margin: 30px 20px 30px 0; */
+  width: 23px;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+  background-size: cover;
+}
+
+.group__button-like:hover {
+  opacity: 0.5;
+  transition: 0.5s ease-in-out;
+}
+

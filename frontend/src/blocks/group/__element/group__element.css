@@ -1,0 +1,11 @@
+.group__element {
+  max-width: 282px;
+  max-height: 361px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.group__element:last-child {
+  margin: 0 0 17px;
+}
+

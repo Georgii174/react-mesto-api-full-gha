@@ -1,0 +1,6 @@
+.page, :root{
+  max-width: 880px;
+  margin: 0 auto 0;
+  background-color: #000000;
+}
+

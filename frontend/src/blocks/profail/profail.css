@@ -1,0 +1,11 @@
+.profail {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 768px) {
+  .profail {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}

@@ -1,0 +1,25 @@
+.auth__button {
+  min-height: 50px;
+  width: 260px;
+  border-radius: 2px;
+  font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 14px;
+  line-height: 17px;
+  margin: 173px auto 0;
+  cursor: pointer;
+  background-color:  #ffffff;
+  color: #000000;
+  padding: 0;
+}
+
+.auth__button:hover {
+  background-color: rgba(255, 255, 255, 0.85);
+}
+
+@media screen and (min-width: 768px) {
+  .auth__button {
+    width: 358px;
+    font-size: 18px;
+    margin: 216px auto 0;
+  }
+}

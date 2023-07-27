@@ -1,0 +1,4 @@
+.group__button-like_active {
+  background: url(../../../../images/activ_like.svg) center no-repeat;
+  opacity: 1;
+}

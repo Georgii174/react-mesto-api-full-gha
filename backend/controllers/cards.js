@@ -1,5 +1,5 @@
 const Card = require('../models/cards');
-const { handleDefaultError, NotFoundError, BadRequestError } = require('../errors/index');
+const { NotFoundError } = require('../errors/index');
 const { ForbiddenError } = require('../errors/ForbiddenError');
 const { messages } = require('../errors/const');
 

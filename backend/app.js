@@ -11,7 +11,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT = 3000 } = process.env;
 const { createUser, login } = require('./controllers/users');
 const { authMiddleware } = require('./middlewares/auth');
-const { errorsMiddleware, errorMiddleware } = require('./middlewares/error');
+const { errorMiddleware } = require('./middlewares/error');
 const { signinCelebrate, signupCelebrate } = require('./validators/users');
 
 const app = express();

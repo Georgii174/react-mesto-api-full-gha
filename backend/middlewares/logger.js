@@ -1,8 +1,7 @@
-// middlewares/logger.js
-
-// импортируем нужные модули
 const winston = require('winston');
 const expressWinston = require('express-winston');
+// const winston = require('winston');
+// const expressWinston = require('express-winston');
 
 // создадим логгер запросов
 const requestLogger = expressWinston.logger({

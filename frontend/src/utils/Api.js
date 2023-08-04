@@ -19,7 +19,10 @@ class Api {
 
     return fetch(this._url + path, {
       method,
-      headers: this._headers,
+      headers: {
+        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        'Content-Type': 'application/json',
+      },
       body,
     }).then(this._checkResponse);
   }

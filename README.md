@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP-адрес 51.250.87.8
+IP 51.250.87.8
 
 Frontend https://mesto.georgii.nomoreparties.co
 

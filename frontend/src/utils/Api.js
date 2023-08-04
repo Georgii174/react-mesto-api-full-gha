@@ -1,8 +1,7 @@
-//
 class Api {
   constructor(options) {
     this._url = options.url;
-    this._headers = options.headers;
+    // this._headers = options.headers;
   }
 
   _checkResponse(res) {
@@ -71,8 +70,4 @@ class Api {
 
 export const api = new Api({
   url: `https://mesto.nomoreparties.co/v1/cohort-63`,
-  headers: {
-    authorization: 'e2050b48-b9af-478f-bd01-da5552cfcb90',
-    'Content-Type': 'application/json',
-  },
 });

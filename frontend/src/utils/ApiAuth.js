@@ -48,8 +48,7 @@ class ApiAuth {
 }
 
 export const apiAuth = new ApiAuth({
-  baseUrl: `https://localhost:3001`,
-  // baseUrl: `https://auth.nomoreparties.co`,
+  baseUrl: `https://mesto.georgii.nomoreparties.co`,
   headers: {
     'Content-Type': 'application/json'
   },

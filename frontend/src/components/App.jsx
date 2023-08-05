@@ -14,7 +14,7 @@ import Register from './Register';
 import ConfirmPopup from './ConfirmPopup';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { api } from '../utils/Api';
-import * as ApiAuth  from '../utils/ApiAuth';
+import * as ApiAuth from '../utils/ApiAuth';
 import ProtectedRoute from './ProtectedRoute';
 
 function App() {
@@ -31,22 +31,37 @@ function App() {
   const [profileEmail, setProfileEmail] = useState('');
   const [message, setMessage] = useState({ path: '', text: '' });
 
+  // useEffect(() => {
+  //   async function checkAuth() {
+  //     if (!localStorage.getItem('JWT')) return;
+  //     try {
+  //       const res = await ApiAuth.checkToken(localStorage.getItem('JWT'));
+  //       if (res.data) {
+  //         setProfileEmail(res.data.email);
+  //         setIsLoggedIn(true);
+  //       }
+  //     } catch (err) {
+  //       setIsLoggedIn(false);
+  //       console.log(err);
+  //     }
+  //   }
+  //   checkAuth();
+  // }, []);
+
   useEffect(() => {
-    async function checkAuth() {
-      if (!localStorage.getItem('JWT')) return;
-      try {
-        const res = await ApiAuth.checkToken(localStorage.getItem('JWT'));
-        if (res.data) {
-          setProfileEmail(res.data.email);
-          setIsLoggedIn(true);
-        }
-      } catch (err) {
-        setIsLoggedIn(false);
-        console.log(err);
-      }
+    const jwt = localStorage.getItem('jwt');
+    if (jwt) {
+      ApiAuth.getContent(jwt)
+        .then(res => {
+          if (res) {
+            setIsLoggedIn(true);
+            setProfileEmail(res.email);
+          }
+        })
+        .catch((err) =>
+          console.log(err));
     }
-    checkAuth();
-  }, []);
+  });
 
   useEffect(() => {
     if (isLoggedIn) return;

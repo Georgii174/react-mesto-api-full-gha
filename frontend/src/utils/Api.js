@@ -1,3 +1,4 @@
+//
 class Api {
   constructor(options) {
     this._url = options.url;
@@ -20,7 +21,7 @@ class Api {
     return fetch(this._url + path, {
       method,
       headers: {
-        authorization: `Bearer ${localStorage.getItem('jwt')}`,
+        authorization: `Bearer ${localStorage.getItem('JWT')}`,
         'Content-Type': 'application/json',
       },
       body,
@@ -72,5 +73,5 @@ class Api {
 }
 
 export const api = new Api({
-  url: `https://mesto.nomoreparties.co/v1/cohort-63`,
+  url: `https://mesto.georgii.nomoreparties.co`,
 });

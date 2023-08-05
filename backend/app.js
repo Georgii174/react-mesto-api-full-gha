@@ -1,6 +1,6 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const { errors } = require('celebrate');
 const cardRouter = require('./routes/cards');
 const userRouter = require('./routes/users');
@@ -11,6 +11,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT = 3000 } = process.env;
 const { createUser, login } = require('./controllers/users');
 const { authMiddleware } = require('./middlewares/auth');
+const { cors } = require('./middlewares/cors');
 const { errorMiddleware } = require('./middlewares/error');
 const { signinCelebrate, signupCelebrate } = require('./validators/users');
 
@@ -25,7 +26,7 @@ mongoose.connect('mongodb://127.0.0.1:27017/mestodb')
   });
 
 app.use(express.json());
-app.use(cookieParser());
+app.use(cors);
 
 app.use(requestLogger);
 

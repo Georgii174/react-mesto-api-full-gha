@@ -49,7 +49,7 @@ class ApiAuth {
 
 export const apiAuth = new ApiAuth({
   baseUrl: `https://mesto.georgii.nomoreparties.co`,
-  headers: {
-    'Content-Type': 'application/json'
-  },
+  // headers: {
+  //   'Content-Type': 'application/json'
+  // },
 });

@@ -153,7 +153,7 @@ function App() {
 
   function handleAuthorize(email, password) {
     apiAuth
-      .signin({ email, password })
+      .authorize({ email, password })
       .then((res) =>
         localStorage.setItem('JWT', res.token)
       )
@@ -167,7 +167,7 @@ function App() {
 
   function handleRegister(email, password) {
     apiAuth
-      .signup({ email, password })
+      .register({ email, password })
       .then((res) => {
         setProfileEmail(res.data.email)
         setMessage({ path: success, text: 'Вы успешно зарегистрировались!' })

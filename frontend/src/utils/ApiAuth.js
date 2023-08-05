@@ -1,55 +1,38 @@
-class ApiAuth {
-  constructor ({baseUrl, headers}) {
-    this.baseUrl = baseUrl;
-    this.headers = headers;
-  }
+import checkResponse from './utils';
+import { BASE_URL } from './utils';
 
+export const register = async (email, password) => {
+  const res = await fetch(`${BASE_URL}/signup`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email, password })
+  });
+  return checkResponse(res);
+};
 
-  _checkResponse(res) {
-    if (res.ok) {
-      return res.json();
+export const authorize = async (email, password) => {
+  const res = await fetch(`${BASE_URL}/signin`, {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ email, password })
+  });
+  return checkResponse(res);
+};
+
+export const getContent = async (token) => {
+  const res = await fetch(`${BASE_URL}/users/me`, {
+    method: 'GET',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${token}`,
     }
-    return Promise.reject(`Ой...: ${res.status}`);
-  }
-
-  async _request(url, options) {
-    const res = await fetch(url, options);
-    return this._checkResponse(res);
-  }
-
-  checkToken(token) {
-    return this._request(`${this.baseUrl}/users/me`, {
-      headers:  {...this.headers, Authorization: `Bearer ${token}`},
-    });
-  }
-
-  signup({ email, password}) {
-    return this._request(`${this.baseUrl}/signup`, {
-      method: 'POST',
-      headers: this.headers,
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
-  }
-
-  signin({ email, password}) {
-    return this._request(`${this.baseUrl}/signin`, {
-      method: 'POST',
-      headers: this.headers,
-      body: JSON.stringify({
-        email: email,
-        password: password,
-      }),
-    });
-  }
-
+  });
+  return checkResponse(res);
 }
-
-export const apiAuth = new ApiAuth({
-  baseUrl: `https://mesto.georgii.nomoreparties.co`,
-  // headers: {
-  //   'Content-Type': 'application/json'
-  // },
-});

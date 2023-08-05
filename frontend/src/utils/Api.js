@@ -1,31 +1,25 @@
-//
+import checkResponse from './utils';
+import { BASE_URL } from './utils';
+
+
 class Api {
   constructor(options) {
-    this._url = options.url;
-    // this._headers = options.headers;
+    this._baseUrl = options.baseUrl;
+    this._headers = options.headers;
   }
 
-  _checkResponse(res) {
-    if (res.ok) {
-      return res.json();
-    }
-    return Promise.reject(`Ошибка: ${res.status}`);
-  }
-
-  _fetch(path, method, data) {
+  async _fetch(path, method, data) {
     let body = data;
     if ((method === 'PATCH' || method === 'POST') && data) {
       body = JSON.stringify(data);
     }
 
-    return fetch(this._url + path, {
+    const res = await fetch(this._url + path, {
       method,
-      headers: {
-        authorization: `Bearer ${localStorage.getItem('JWT')}`,
-        'Content-Type': 'application/json',
-      },
+      headers: this._headers,
       body,
-    }).then(this._checkResponse);
+    });
+    return checkResponse(res);
   }
 
   getUserInfo() {
@@ -73,5 +67,9 @@ class Api {
 }
 
 export const api = new Api({
-  url: `https://mesto.georgii.nomoreparties.co`,
+  baseUrl: BASE_URL,
+  headers: {
+    'Access-Control-Allow-Credentials': 'true',
+    'Content-Type': 'application/json',
+  }
 });

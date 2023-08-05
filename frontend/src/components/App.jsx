@@ -35,7 +35,7 @@ function App() {
     async function checkAuth() {
       if (!localStorage.getItem('JWT')) return;
       try {
-        const res = await apiAuth.checkToken(localStorage.getItem('JWT'));
+        const res = await ApiAuth.checkToken(localStorage.getItem('JWT'));
         if (res.data) {
           setProfileEmail(res.data.email);
           setIsLoggedIn(true);

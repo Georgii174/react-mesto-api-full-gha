@@ -169,7 +169,7 @@ function App() {
   function handleAuthorize(email, password) {
     ApiAuth.authorize({ email, password })
       .then((res) =>
-        localStorage.setItem('JWT', res.token)
+        localStorage.setItem('jwt', res.token)
       )
       .then(() =>
         setIsLoggedIn(true),
@@ -182,7 +182,7 @@ function App() {
   function handleRegister(email, password) {
     ApiAuth.register({ email, password })
       .then((res) => {
-        setProfileEmail(res.data.email)
+        setProfileEmail(res.email)
         setMessage({ path: success, text: 'Вы успешно зарегистрировались!' })
       })
       .catch(err => {

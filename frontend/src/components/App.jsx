@@ -14,7 +14,7 @@ import Register from './Register';
 import ConfirmPopup from './ConfirmPopup';
 import { CurrentUserContext } from '../contexts/CurrentUserContext';
 import { api } from '../utils/Api';
-import { apiAuth } from '../utils/ApiAuth';
+import * as ApiAuth  from '../utils/ApiAuth';
 import ProtectedRoute from './ProtectedRoute';
 
 function App() {
@@ -152,8 +152,7 @@ function App() {
   }
 
   function handleAuthorize(email, password) {
-    apiAuth
-      .authorize({ email, password })
+    ApiAuth.authorize({ email, password })
       .then((res) =>
         localStorage.setItem('JWT', res.token)
       )
@@ -166,8 +165,7 @@ function App() {
   }
 
   function handleRegister(email, password) {
-    apiAuth
-      .register({ email, password })
+    ApiAuth.register({ email, password })
       .then((res) => {
         setProfileEmail(res.data.email)
         setMessage({ path: success, text: 'Вы успешно зарегистрировались!' })

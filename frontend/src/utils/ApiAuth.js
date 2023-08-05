@@ -1,5 +1,5 @@
-import checkResponse from './utils';
-import { BASE_URL } from './utils';
+import { BASE_URL, checkResponse } from './utils';
+
 
 export const register = async (email, password) => {
   const res = await fetch(`${BASE_URL}/signup`, {

@@ -1,5 +1,4 @@
-import checkResponse from './utils';
-import { BASE_URL } from './utils';
+import { BASE_URL, checkResponse } from './utils';
 
 
 class Api {

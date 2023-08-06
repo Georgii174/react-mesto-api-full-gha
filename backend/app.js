@@ -11,7 +11,7 @@ const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { PORT = 3001 } = process.env;
 const { createUser, login } = require('./controllers/users');
 const { authMiddleware } = require('./middlewares/auth');
-const cors = require('./middlewares/cors');
+const { cors } = require('./middlewares/cors');
 const { errorMiddleware } = require('./middlewares/error');
 const { signinCelebrate, signupCelebrate } = require('./validators/users');
 

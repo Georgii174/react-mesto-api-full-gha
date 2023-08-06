@@ -70,7 +70,7 @@ const updateUser = (req, res, next) => {
 };
 
 const login = (req, res, next) => {
-  const { password, email } = req.body;
+  const { email, password } = req.body;
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign(

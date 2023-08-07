@@ -4,11 +4,11 @@ const { JWT_SECRET } = require('../envConfig');
 
 const authMiddleware = (req, res, next) => {
   const { authorization } = req.headers;
-  const token = authorization.replace('Bearer ', '');
 
   if (!authorization || !authorization.startsWith('Bearer')) {
     throw new UnauthorizedError('Необходима авторизация');
   }
+  const token = authorization.replace('Bearer ', '');
 
   let payload;
 

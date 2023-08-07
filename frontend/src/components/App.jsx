@@ -167,7 +167,7 @@ function App() {
   }
 
   function handleAuthorize(email, password) {
-    ApiAuth.authorize({ email, password })
+    ApiAuth.authorize( email, password )
       .then((res) =>
         localStorage.setItem('jwt', res.token)
       )
@@ -180,7 +180,7 @@ function App() {
   }
 
   function handleRegister(email, password) {
-    ApiAuth.register({ email, password })
+    ApiAuth.register( email, password )
       .then((res) => {
         setProfileEmail(res.email)
         setMessage({ path: success, text: 'Вы успешно зарегистрировались!' })

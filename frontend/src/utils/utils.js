@@ -1,4 +1,4 @@
-export const BASE_URL = `https://mesto.ageorgii74.ru.nomoredomains.xyz`
+export const BASE_URL = `https://api.mesto.georgii.pr15.nomoreparties.co`
 
 export const checkResponse = (res) => {
     if (res.ok) {

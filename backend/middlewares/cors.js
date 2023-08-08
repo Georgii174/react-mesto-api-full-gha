@@ -1,6 +1,6 @@
 const allowedCors = [
-  'http://mesto.georgii.nomoreparties.co',
-  'https://mesto.georgii.nomoreparties.co',
+  'http://mesto.georgii.pr15.nomoreparties.co',
+  'https://mesto.georgii.pr15.nomoreparties.co',
   'http://localhost:3000',
   'https://localhost:3000',
 ];

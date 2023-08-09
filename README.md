@@ -11,6 +11,6 @@
 
 IP 51.250.87.8
 
-Frontend https://mesto.georgii.nomoreparties.co
+Frontend https://mesto.georgii.pr15.nomoreparties.co
 
-Backend https://mesto.ageorgii74.ru.nomoredomains.xyz
+Backend https://api.mesto.georgii.pr15.nomoreparties.co

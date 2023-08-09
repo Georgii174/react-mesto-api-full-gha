@@ -31,23 +31,6 @@ function App() {
   const [profileEmail, setProfileEmail] = useState('');
   const [message, setMessage] = useState({ path: '', text: '' });
 
-  // useEffect(() => {
-  //   async function checkAuth() {
-  //     if (!localStorage.getItem('JWT')) return;
-  //     try {
-  //       const res = await ApiAuth.checkToken(localStorage.getItem('JWT'));
-  //       if (res.data) {
-  //         setProfileEmail(res.data.email);
-  //         setIsLoggedIn(true);
-  //       }
-  //     } catch (err) {
-  //       setIsLoggedIn(false);
-  //       console.log(err);
-  //     }
-  //   }
-  //   checkAuth();
-  // }, []);
-
   useEffect(() => {
     const jwt = localStorage.getItem('jwt');
     if (jwt) {
@@ -61,10 +44,10 @@ function App() {
         .catch((err) =>
           console.log(err));
     }
-  });
+  },[]);
 
   useEffect(() => {
-    if (isLoggedIn) return;
+    if (!isLoggedIn) return;
     api
       .getUserInfo()
       .then((data) => {
@@ -114,7 +97,7 @@ function App() {
   }
 
   function handleCardLike(likes, _id) {
-    const isLiked = likes.some(i => i._id === currentUser._id);
+    const isLiked = likes.some(i => i === currentUser._id);
     api
       .changeLikeCardStatus(_id, isLiked)
       .then((newCard) => {
@@ -195,7 +178,7 @@ function App() {
 
   function handleSignOut() {
     setIsLoggedIn(false);
-    localStorage.removeItem('JWT');
+    localStorage.removeItem('jwt');
   };
 
   return (

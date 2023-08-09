@@ -70,6 +70,6 @@ export const api = new Api({
   headers: {
     'Access-Control-Allow-Credentials': 'true',
     'Content-Type': 'application/json',
-    'Authorization': `Bearer ${token}`
+    'Authorization': `Bearer ${localStorage.getItem('jwt')}`
   }
 });

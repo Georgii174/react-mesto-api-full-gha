@@ -13,7 +13,7 @@ class Api {
       body = JSON.stringify(data);
     }
 
-    const res = await fetch(this._url + path, {
+    const res = await fetch(this._baseUrl + path, {
       method,
       headers: this._headers,
       body,
@@ -38,11 +38,11 @@ class Api {
   }
 
   likeCard(id) {
-    return this._fetch(`/cards/likes/${id}`, 'PUT');
+    return this._fetch(`/cards/${id}/likes`, 'PUT');
   }
 
   dislikeCard(id) {
-    return this._fetch(`/cards/likes/${id}`, 'DELETE');
+    return this._fetch(`/cards/${id}/likes`, 'DELETE');
   }
 
   changeLikeCardStatus(id, hasLike) {
@@ -70,5 +70,6 @@ export const api = new Api({
   headers: {
     'Access-Control-Allow-Credentials': 'true',
     'Content-Type': 'application/json',
+    'Authorization': `Bearer ${token}`
   }
 });

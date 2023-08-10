@@ -5,7 +5,7 @@ function Card({onCardClick, name, link, likes, _id, owner, onCardLike, onCardDel
 
   const currentUser = React.useContext(CurrentUserContext);
   const isOwn = owner === currentUser._id;
-  const isLiked = likes.some(i => i._id === currentUser._id);
+  const isLiked = likes.some(i => i === currentUser._id);
   const cardLikeButtonClassName = (`group__button-like ${isLiked && 'group__button-like_active'}`
 );
 
